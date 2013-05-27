@@ -4,11 +4,11 @@
 from setuptools import setup
 
 with open('LICENSE','r') as f:
-  license = f.read().strip()
+    license = f.read().strip()
 
 setup(
     name         = 'requests-runscope',
-    version      = '0.1.0.0',
+    version      = '0.1.1.0',
     packages     = [ 'requests_runscope' ],
     requires     = [ 'requests(>=1.0.0)' ],
     provides     = [ 'requests_runscope' ],
