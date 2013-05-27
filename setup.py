@@ -7,7 +7,7 @@ with open('LICENSE','r') as f:
   license = f.read().strip()
 
 setup(
-    name         = 'requests_runscope',
+    name         = 'requests-runscope',
     version      = '0.1.0.0',
     packages     = [ 'requests_runscope' ],
     requires     = [ 'requests(>=1.0.0)' ],
