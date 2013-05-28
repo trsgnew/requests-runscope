@@ -8,10 +8,11 @@ with open('LICENSE','r') as f:
 
 setup(
     name         = 'requests-runscope',
-    version      = '0.1.1.0',
+    version      = '0.1.2.0',
     packages     = [ 'requests_runscope' ],
     requires     = [ 'requests(>=1.0.0)' ],
     provides     = [ 'requests_runscope' ],
+    include_package_data = True,
     author       = 'Runscope Inc.',
     author_email = 'help@runscope.com',
     description  = 'This package adds Runscope support to the Python Requests library.',
