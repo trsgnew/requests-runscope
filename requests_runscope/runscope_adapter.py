@@ -17,9 +17,11 @@ class RunscopeAdapter(HTTPAdapter):
     """
 
     bucket_key = ""
+    auth_token = None
 
-    def __init__(self, bucket_key, **kwargs):
+    def __init__(self, bucket_key, auth_token=None, **kwargs):
         self.bucket_key = bucket_key
+        self.auth_token = auth_token
         super(RunscopeAdapter, self).__init__(**kwargs)
 
 
@@ -33,6 +35,9 @@ class RunscopeAdapter(HTTPAdapter):
         request.url, port = self.proxify(request.url, self.bucket_key)
         if port:
             request.headers["Runscope-Request-Port"] = port
+
+        if auth_token:
+            request.headers["Runscope-Bucket-Auth"] = auth_token
 
         return super(RunscopeAdapter, self).send(request, **kwargs)
 
