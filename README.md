@@ -14,7 +14,7 @@ Runscope Adapter for Python Requests (python-requests.org)
 ### Example
 
     import requests
-    from dashboard.runscope_adapter import RunscopeAdapter
+    from requests_runscope import RunscopeAdapter
 
 
     def main():
