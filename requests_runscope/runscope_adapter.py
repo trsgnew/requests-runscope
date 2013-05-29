@@ -36,8 +36,8 @@ class RunscopeAdapter(HTTPAdapter):
         if port:
             request.headers["Runscope-Request-Port"] = port
 
-        if auth_token:
-            request.headers["Runscope-Bucket-Auth"] = auth_token
+        if self.auth_token:
+            request.headers["Runscope-Bucket-Auth"] = self.auth_token
 
         return super(RunscopeAdapter, self).send(request, **kwargs)
 
@@ -75,3 +75,4 @@ class RunscopeAdapter(HTTPAdapter):
             port = parts.port
 
         return urlparse.urlunsplit((parts.scheme, new_host, parts.path, parts.query, parts.fragment)), port
+
