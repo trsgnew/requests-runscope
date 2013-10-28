@@ -10,11 +10,14 @@ Runscope Adapter for Python Requests (python-requests.org)
 
 ### Installation
 
+```cli
     pip install requests-runscope
+```
 
 
 ### Example
 
+```python
     import requests
     from requests_runscope import RunscopeAdapter
 
@@ -38,3 +41,4 @@ Runscope Adapter for Python Requests (python-requests.org)
 
     if __name__ == '__main__':
         main()
+```
