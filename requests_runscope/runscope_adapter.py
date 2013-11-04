@@ -65,14 +65,13 @@ class RunscopeAdapter(HTTPAdapter):
         parts = urlparse.urlsplit(original_url)
 
         clean_host = parts.hostname.replace("-", "~").replace(".", "-")
-        new_host = "{}-{}.{}".format(clean_host, bucket_key, gateway_host).replace("~", "--")
+        new_host = "{0}-{1}.{2}".format(clean_host, bucket_key, gateway_host).replace("~", "--")
 
         if parts.username or parts.password:
-            new_host = "{}:{}@{}".format(parts.username, parts.password, new_host)
+            new_host = "{0}:{1}@{2}".format(parts.username, parts.password, new_host)
 
         port = None
         if parts.port:
             port = parts.port
 
         return urlparse.urlunsplit((parts.scheme, new_host, parts.path, parts.query, parts.fragment)), port
-
