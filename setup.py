@@ -8,7 +8,7 @@ with open('LICENSE','r') as f:
 
 setup(
     name         = 'requests-runscope',
-    version      = '0.1.4.1',
+    version      = '0.1.5',
     packages     = [ 'requests_runscope' ],
     requires     = [ 'requests(>=1.0.0)' ],
     provides     = [ 'requests_runscope' ],
