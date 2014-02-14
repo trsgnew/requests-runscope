@@ -62,7 +62,12 @@ class RunscopeAdapter(HTTPAdapter):
         After:
             http://foo-example-com-bucket_key.<gateway_host>/path
         """
+
         parts = urlparse.urlsplit(original_url)
+
+        # prevent double proxifying (e.g. when handling rewritten redirect locations)
+        if gateway_host in original_url:
+            return original_url, port if parts.port else None
 
         clean_host = parts.hostname.replace("-", "~").replace(".", "-")
         new_host = "{0}-{1}.{2}".format(clean_host, bucket_key, gateway_host).replace("~", "--")
